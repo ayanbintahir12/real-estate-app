@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-//CRUD Operations 
+//CRUD Operations
 
 /**
  *@api {get} /places Get Places Information
@@ -149,15 +149,27 @@ router.delete('/places/delete:id', (req, res) => {});
 //Admin Data
 
 /**
- *@api {delete} /places/:id Delete Place
- *@apiName DeletePlace
- *@apiGroup Place
+ *@api {post} /Signup User
+ *@apiName Signup User
+ *@apiGroup Signup
  *
- *@apiParam {Number} id Place id
+ *@apiParam {Number} id Id of user
+ *@apiParam {String} user_name Name of the user
+ *@apiParam {String} user_password Password of the user
+ *
+ *
+ *@apiSuccess {String} user_number Number of the user
+ *@apiSuccess {String} user_password Password of the user
+ *@apiSuccess {String} user_name Name of the user
+ *
  *
  *@apiSuccessExample Successful Response:
  * HTTP/1.1 200 OK
  * {
+ *  {
+ *      user_name:"Ayan Bin Tahir",
+ *      user_email:"ayan@gmail.com
+ *  }
  *   "status":"success",
  *   "message":"Deleted!!"
  * }
@@ -171,4 +183,4 @@ router.delete('/places/delete:id', (req, res) => {});
  * }
  *
  */
-router.delete('/places/delete:id', (req, res) => {});
+router.post('/places/signup', (req, res) => {});

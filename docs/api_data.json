@@ -1,5 +1,33 @@
 [
   {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "./docs/main.js",
+    "group": "/home/test/Desktop/Real State Project/docs/main.js",
+    "groupTitle": "/home/test/Desktop/Real State Project/docs/main.js",
+    "name": ""
+  },
+  {
     "type": "post",
     "url": "/places/create",
     "title": "Add Place",
@@ -76,57 +104,6 @@
         {
           "title": "Successful Response:",
           "content": "HTTP/1.1 200 OK\n\n{\n  \"status\":\"success\",\n  \"message\":\"Created!\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "./src/index.js",
-    "groupTitle": "Place"
-  },
-  {
-    "type": "delete",
-    "url": "/places/:id",
-    "title": "Delete Place",
-    "name": "DeletePlace",
-    "group": "Place",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Place id</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"status\":\"success\",\n  \"message\":\"Deleted!!\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "PlaceNotFound",
-            "description": "<p>The id of the Place was not found</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "\nHTTP/1.1 404 Not Found\n{\n error:\"Place with id not found.\"\n}",
           "type": "json"
         }
       ]
@@ -407,5 +384,95 @@
     "version": "0.0.0",
     "filename": "./src/index.js",
     "groupTitle": "Places"
+  },
+  {
+    "type": "post",
+    "url": "/Signup",
+    "title": "User",
+    "name": "Signup_User",
+    "group": "Signup",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id of user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_name",
+            "description": "<p>Name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_password",
+            "description": "<p>Password of the user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_number",
+            "description": "<p>Number of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_password",
+            "description": "<p>Password of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_name",
+            "description": "<p>Name of the user</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Successful Response:",
+          "content": "HTTP/1.1 200 OK\n{\n {\n     user_name:\"Ayan Bin Tahir\",\n     user_email:\"ayan@gmail.com\n }\n  \"status\":\"success\",\n  \"message\":\"Deleted!!\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "PlaceNotFound",
+            "description": "<p>The id of the Place was not found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\nHTTP/1.1 404 Not Found\n{\n error:\"Place with id not found.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./src/index.js",
+    "groupTitle": "Signup"
   }
 ]
