@@ -242,7 +242,7 @@ router.post('/login', (req, res) => {});
  * HTTP/1.1 200 OK
  * {
  *  "status":"success",
- *  "message":"User Successfully created!"
+ *  "message":"User Successfully changed!"
  *  {
  *      user_name:"Ayan Bin Tahir",
  *      user_email:"ayan@gmail.com,
