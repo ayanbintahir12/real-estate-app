@@ -29,6 +29,179 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/ForgetPassword",
+    "title": "User",
+    "name": "ForgetPassword_User",
+    "group": "ForgetPassword",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_email",
+            "description": "<p>email of the user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_number",
+            "description": "<p>Number of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_password",
+            "description": "<p>Password of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_name",
+            "description": "<p>Name of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "role_id",
+            "description": "<p>Role of the user</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Successful Response:",
+          "content": "HTTP/1.1 200 OK\n{\n \"status\":\"success\",\n \"message\":\"User Successfully created!\"\n {\n     user_name:\"Ayan Bin Tahir\",\n     user_email:\"ayan@gmail.com,\n     user_password:\"zxcxzcz\",\n     role_id :\"seller\"\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UserNotCreated",
+            "description": "<p>The id of the Place was not found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\nHTTP/1.1 404 Not Found\n{\n error:\"UserNotCreated\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./src/index.js",
+    "groupTitle": "ForgetPassword"
+  },
+  {
+    "type": "post",
+    "url": "/Login",
+    "title": "User",
+    "name": "Login_User",
+    "group": "Login",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_name",
+            "description": "<p>Name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_password",
+            "description": "<p>Password of the user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_number",
+            "description": "<p>Number of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_password",
+            "description": "<p>Password of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "user_name",
+            "description": "<p>Name of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "role_id",
+            "description": "<p>Role of the user</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Successful Response:",
+          "content": "HTTP/1.1 200 OK\n{\n \"status\":\"success\",\n \"message\":\"User Logged in!!\"\n {\n     user_name:\"Ayan Bin Tahir\",\n     user_email:\"ayan@gmail.com,\n     user_password:\"zxcxzcz\",\n     role_id :\"seller\"\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UserNotLogin",
+            "description": "<p>The id of the User was not found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "\nHTTP/1.1 404 Not Found\n{\n error:\"UserNotCreated\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./src/index.js",
+    "groupTitle": "Login"
+  },
+  {
+    "type": "post",
     "url": "/places/create",
     "title": "Add Place",
     "name": "AddPlace",
@@ -441,13 +614,20 @@ define({ "api": [
             "optional": false,
             "field": "user_name",
             "description": "<p>Name of the user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "role_id",
+            "description": "<p>Role of the user</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Successful Response:",
-          "content": "HTTP/1.1 200 OK\n{\n {\n     user_name:\"Ayan Bin Tahir\",\n     user_email:\"ayan@gmail.com\n }\n  \"status\":\"success\",\n  \"message\":\"Deleted!!\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n \"status\":\"success\",\n \"message\":\"User Successfully created!\"\n \"token\":\"xsaxhbsaxsajh\"\n  {\n     user_name:\"Ayan Bin Tahir\",\n     user_email:\"ayan@gmail.com,\n     user_password:\"zxcxzcz\",\n     role_id :\"seller\"\n }\n}",
           "type": "json"
         }
       ]
@@ -458,15 +638,15 @@ define({ "api": [
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "PlaceNotFound",
-            "description": "<p>The id of the Place was not found</p>"
+            "field": "UserNotCreated",
+            "description": "<p>The id of the User was not found</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "\nHTTP/1.1 404 Not Found\n{\n error:\"Place with id not found.\"\n}",
+          "content": "\nHTTP/1.1 404 Not Found\n{\n error:\"UserNotCreated\"\n}",
           "type": "json"
         }
       ]
