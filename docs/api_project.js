@@ -1,5 +1,5 @@
 define({
-  "name": "real-state-project",
+  "name": "real-estate-project",
   "version": "1.0.0",
   "description": "",
   "sampleUrl": false,
@@ -7,7 +7,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2021-03-04T05:06:55.080Z",
+    "time": "2021-03-04T05:39:59.772Z",
     "url": "https://apidocjs.com",
     "version": "0.26.0"
   }

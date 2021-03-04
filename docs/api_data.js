@@ -191,7 +191,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "\nHTTP/1.1 404 Not Found\n{\n error:\"UserNotCreated\"\n}",
+          "content": "\nHTTP/1.1 404 Not Found\n{\n error:\"UserNotLogin\"\n}",
           "type": "json"
         }
       ]
